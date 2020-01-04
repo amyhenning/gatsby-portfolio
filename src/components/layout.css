@@ -1,0 +1,58 @@
+html {
+	background-color: #fff;
+	min-height: 100%;
+}
+
+#layout-container {
+	margin: 4rem auto;
+	max-width: 800px;
+	padding: 0 1rem;
+}
+
+header {
+	margin-bottom: 1.5rem;
+}
+
+header h1 {
+	display: inline;
+	font-size: 2.75em;
+	color: #1ACF8D;
+}
+
+header ul {
+	list-style: none;
+	float: right;
+	margin: auto 0;
+}
+
+.name-link {
+	text-decoration: none;
+}
+
+.small-name-link {
+	display: none;
+}
+
+.list-link {
+	display: inline-block;
+	margin: 0 0 0 1em;
+}
+
+.list-link a {
+	color: #4C5452;
+	text-decoration: none;
+	border-bottom: 2px solid #1ACF8D;
+}
+
+footer {
+	position: relative;
+	font-size: 0.75rem;
+	text-align: center;
+}
+
+/*For small screen sizes*/
+header ul {
+	list-style: none;
+	margin: 0;
+/*	float: right;
+*/}
