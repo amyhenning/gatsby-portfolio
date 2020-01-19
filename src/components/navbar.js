@@ -2,15 +2,7 @@ import React from 'react'
 import './navbar.css'
 import Icofont from 'react-icofont'
 
-
-
-
 class NavBar extends React.Component {
-
-  static defaultProps = {
-    // insert link names, hrefs, and classnames here
-  };
-
   constructor(props) {
     super(props);
     this.state = {
@@ -29,8 +21,6 @@ class NavBar extends React.Component {
         activeClass: activeClass,
       }
     });
-    console.log(menuStatus);
-    console.log(activeClass);
   }
 
   render() {
