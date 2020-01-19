@@ -3,6 +3,16 @@ import './navbar.css'
 import Icofont from 'react-icofont'
 
 class NavBar extends React.Component {
+  static defaultProps = {
+    links: [
+      { name: 'Home', path: '/' },
+      { name: 'About', path: '/about' },
+      { name: 'Blog', path: '/blog' },
+      { name: 'Work', path: '/work' },
+      { name: 'Contact', path: '/contact' }
+    ]
+  };
+
   constructor(props) {
     super(props);
     this.state = {
@@ -23,16 +33,20 @@ class NavBar extends React.Component {
     });
   }
 
+  generateLinks(links) {
+    let linkList = [];
+    for (let i = 0; i < links.length; i++) {
+      linkList.push(<li className={this.state.activeClass}><a href={links[i].path}>{links[i].name}</a></li>);
+    }
+    return linkList
+  }
+
   render() {
     return (
       <nav className="nav">
         <ul className="menu">
           <li className="logo"><a href="/"><h1>Amy Henning</h1></a></li>
-          <li className={this.state.activeClass}><a href="/">Home</a></li>
-          <li className={this.state.activeClass}><a href="/about">About</a></li>
-          <li className={this.state.activeClass}><a href="/blog">Blog</a></li>
-          <li className={this.state.activeClass}><a href="/work">Work</a></li>
-          <li className={this.state.activeClass}><a href="/contact">Contact</a></li>
+          {this.generateLinks(this.props.links)}
           <li className="toggle"><Icofont icon="icofont-navigation-menu" className="hamburger" onClick={this.handleClick} /></li>
         </ul>
       </nav>
