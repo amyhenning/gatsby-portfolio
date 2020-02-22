@@ -1,0 +1,21 @@
+.intro {
+  font-size: 1.5em;
+  padding: 4rem 3rem 4rem 0;
+  line-height: 1.6em;
+}
+
+@media all and (min-width: 768px) {
+  .intro {
+    font-size: 1.75em;
+    padding: 4rem 10rem 4rem 0;
+    line-height: 1.6em;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .intro {
+    font-size: 2em;
+    padding: 4rem 10rem 4rem 0;
+    line-height: 1.6em;
+  }
+}
