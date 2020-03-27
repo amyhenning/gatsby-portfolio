@@ -2,17 +2,24 @@
 nav {
   padding: 0;
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-ul {
+#nav-links {
+  font-size: 0.9em;
+}
+
+#nav-links ul {
   list-style: none;
   margin: 0;
+  display: flex;
+  flex-direction: row;
 }
 
-ul .menu {
-  margin-bottom: 1em;
-  padding: 0;
-  height: 100%;
+#nav-links ul li {
+  margin-right: 1em;
+  margin-bottom: 0em;
 }
 
 a {
@@ -25,22 +32,12 @@ a:hover {
   text-decoration: none;
 }
 
-.menu li {
-  font-size: 1em;
-}
-
-.menu li .item a {
-  display: block;
-}
-
 .logo {
   padding: 0;
   margin: 0 0 1em 0;
 }
 
 .logo a {
-  font-size: 2em;
-  color: #1ACF8D;
   padding: 0;
 }
 
@@ -48,61 +45,41 @@ a:hover {
   text-decoration: none;
 }
 
-/* Mobile Menu */
-.menu {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.toggle {
-  cursor: pointer;
-  order: 1;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  margin: 0 0 1em 0;
-}
-
-.hamburger {
-  font-size: 1.5em;
-}
-
-.item {
-  width: 100%;
-  text-align: center;
-  order: 3;
-  display: none;
-  padding: 0.5em;
-  margin: 0;
-}
-
-.item.active {
-  display: block;
+.logo h1 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+  color: #1ACF8D;
 }
 
 /* Tablet Menu */
 @media all and (min-width: 768px) {
-  .menu {
-    justify-content: center;
+  .nav {
+    max-width: 992px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
 
-  .logo {
-    flex: 1;
-  }
 
   .logo h1 {
     font-size: 2.25rem;
   }
 
-  .toggle {
-    order: 1;
-    position: relative;
-    top: 50%;
-    transform: translateY(20%);
-    cursor: pointer;
+  #nav-logo {
+    width: 55%;
+  }
+
+  .logo h1 {
+    font-size: 2.25rem;
+    margin-bottom: 0em;
+    color: #1ACF8D;
+    padding: 0;
+  }
+
+  #nav-links {
+    width: 45%;
+    font-size: 0.9em;
   }
 }
 
@@ -111,35 +88,31 @@ a:hover {
   .nav {
     max-width: 992px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: row;
   }
 
   .logo {
     margin: 0;
   }
 
-  .item {
-    display: block;
-    width: auto;
-  }
-
-  .toggle {
-    display: none;
-  }
-
-  .logo {
-    order: 0;
+  #nav-logo {
+    width: 55%;
   }
 
   .logo h1 {
     font-size: 2.75rem;
+    margin-bottom: 0;
+    color: #1ACF8D;
     padding: 0;
   }
 
-  .item {
-    order: 1;
-  }
-
-  .menu li:not(.logo) {
-    padding: 0.5em;
+  #nav-links {
+    width: 45%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 1em;
   }
 }
